@@ -14,11 +14,50 @@ Baltic Sea = Q545
 
 ```
 SELECT ?river ?riverLabel
-WHERE 
+WHERE
 {
-    ?river wdt:P403 wd:Q545 . 
+    ?river wdt:P403 wd:Q545 .
 
     SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
 }
 LIMIT 50
 ```
+
+## Day 3 - Client validation complete
+
+### Finnish lakes
+
+- Query executed successfully
+- Returned 10 rows
+- Each row contained both `lake` and `lakeLabel`
+
+### Baltic rivers
+
+- Query executed successfully
+- Returned 10 rows
+- Confirmed that Q545 is the Baltic Sea
+- Confirmed that P403 points from a river to the water body it drains into
+
+### Finnish lakes without limit
+
+- Query executed successfully
+- Returned 17,878 rows
+- No lables here - the query only selects `?lake`
+- Demonstrated that result size can become large without specifying `LIMIT`
+
+### Invalid query
+
+- Client raised `SparqlQueryError`
+- Wikidata returned HTTP 400
+- Error indicated a malformed SPARQL query and a missing closing brace
+- Test explicitly verified that the expected exception was raised
+
+### Empty result
+
+- Query executed successfully
+- Returned zero rows
+- Confirmed that an empty result is not an execution error
+
+## Day 3 status
+
+The Wikidata client is ready for Bionic integration
