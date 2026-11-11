@@ -40,3 +40,22 @@ def run_sparql_query(query: str, timeout: int = 60) -> dict:
         return response.json()
     except ValueError as error:
         raise SparqlQueryError(f"Wikidata returned a response that cannot be parsed as JSON: {error}") from error
+
+def format_results(data: dict) -> list[dict]:
+    """
+    Convert a Wikidata SPARQL JSON response into a list of dictionaries.
+    
+    Ex:
+        [{"lake": "http://www.wikidata.org/entity/Q12345", "lakeLabel": "Lake Saimaa"}]
+    """
+    bindings = data.get("results", {}).get("bingdings", [])
+    
+    rows = []
+    for binding in bindings:
+        row = {}
+        for variable, value in binding.items():
+            row[variable] = value.get("value")
+        rows.append(row)
+        
+    return rows
+
