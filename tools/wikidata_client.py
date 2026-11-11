@@ -48,7 +48,7 @@ def format_results(data: dict) -> list[dict]:
     Ex:
         [{"lake": "http://www.wikidata.org/entity/Q12345", "lakeLabel": "Lake Saimaa"}]
     """
-    bindings = data.get("results", {}).get("bingdings", [])
+    bindings = data.get("results", {}).get("bindings", [])
     
     rows = []
     for binding in bindings:
@@ -59,3 +59,9 @@ def format_results(data: dict) -> list[dict]:
         
     return rows
 
+def run_query(query: str, timeout: int = 60) -> list[dict]:
+    """
+    Execute a query and return formatted results.
+    """
+    data = run_sparql_query(query, timeout=timeout)
+    return format_results(data)
