@@ -53,6 +53,22 @@ def main():
         except SparqlQueryError as error:
             print(f"Query failed: {error}")
 
+def test_unit_filter_str_comparison():
+    query = """
+    SELECT ?lake ?area WHERE {
+      ?lake wdt:P17 wd:Q33 .
+      ?lake wdt:P31/wdt:P279* wd:Q23397 .
+      ?lake p:P2046 ?areaStatement .
+      ?areaStatement psv:P2046 ?areaValue .
+      ?areaValue wikibase:quantityAmount ?area ;
+                 wikibase:quantityUnit ?unit .
+      FILTER(STR(?unit) = "http://www.wikidata.org/entity/Q712226")
+      FILTER(?area > 100)
+    }
+    LIMIT 5
+    """
+    rows = run_query(query)
+    assert len(rows) > 0
 
 def test_empty_result():
     query = """
