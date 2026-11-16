@@ -20,7 +20,7 @@ QUERIES = {
         }
         LIMIT 10
     """,
-    "finnish_lakes_no_limit": 
+    "finnish_lakes_no_limit":
         """
         SELECT ?lake WHERE {
           ?lake wdt:P17 wd:Q33 .
@@ -53,6 +53,7 @@ def main():
         except SparqlQueryError as error:
             print(f"Query failed: {error}")
 
+
 def test_unit_filter_str_comparison():
     query = """
     SELECT ?lake ?area WHERE {
@@ -70,6 +71,7 @@ def test_unit_filter_str_comparison():
     rows = run_query(query)
     assert len(rows) > 0
 
+
 def test_empty_result():
     query = """
         SELECT ?item ?itemLabel WHERE {
@@ -84,11 +86,13 @@ def test_empty_result():
     rows = run_query(query)
     print(f"\nEmpty-result test returned {len(rows)} row(s).")
     assert len(rows) == 0
-    
+
+
 def test_invalid_query():
     try:
         run_query(QUERIES["invalid_query"])
-        raise AssertionError("Expected SparqlQueryError for malformed SPARQL, but no error was raised.")
+        raise AssertionError(
+            "Expected SparqlQueryError for malformed SPARQL, but no error was raised.")
     except SparqlQueryError as error:
         print(f"\nInvalid-query test passed. Caught expected error: {error}")
 
