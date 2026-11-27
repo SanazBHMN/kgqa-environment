@@ -1,0 +1,138 @@
+{
+  "query": {
+    "printrequests": [
+      {
+        "label": "",
+        "key": "",
+        "redi": "",
+        "typeid": "_wpg",
+        "mode": 2
+      },
+      {
+        "label": "ObsCode",
+        "key": "ObsCode",
+        "redi": "",
+        "typeid": "_txt",
+        "mode": 1,
+        "format": ""
+      },
+      {
+        "label": "Päivämäärä",
+        "key": "Päivämäärä",
+        "redi": "",
+        "typeid": "_dat",
+        "mode": 1,
+        "format": ""
+      },
+      {
+        "label": "SiteID",
+        "key": "SiteID",
+        "redi": "",
+        "typeid": "_txt",
+        "mode": 1,
+        "format": ""
+      },
+      {
+        "label": "Koordinaatit",
+        "key": "Koordinaatit",
+        "redi": "",
+        "typeid": "_geo",
+        "mode": 1,
+        "format": ""
+      },
+      {
+        "label": "DataJSON",
+        "key": "DataJSON",
+        "redi": "",
+        "typeid": "_txt",
+        "mode": 1,
+        "format": ""
+      },
+      {
+        "label": "Display fi",
+        "key": "Display_fi",
+        "redi": "",
+        "typeid": "_txt",
+        "mode": 1,
+        "format": ""
+      },
+      {
+        "label": "Display sv",
+        "key": "Display_sv",
+        "redi": "",
+        "typeid": "_txt",
+        "mode": 1,
+        "format": ""
+      },
+      {
+        "label": "Display en",
+        "key": "Display_en",
+        "redi": "",
+        "typeid": "_txt",
+        "mode": 1,
+        "format": ""
+      },
+      {
+        "label": "Ylläpito",
+        "key": "Ylläpito",
+        "redi": "",
+        "typeid": "_txt",
+        "mode": 1,
+        "format": ""
+      }
+    ],
+    "results": {
+      "Torankijärvi (74.031.1.023)/Haapanantien ranta# 5eb317419e977baaed5b2e09ce573e8a": {
+        "printouts": {
+          "ObsCode": [
+            "ice"
+          ],
+          "Päivämäärä": [
+            {
+              "timestamp": "1794560400",
+              "raw": "1/2026/11/13/9/0/0/0"
+            }
+          ],
+          "SiteID": [
+            "169565"
+          ],
+          "Koordinaatit": [
+            {
+              "lat": 65.9545342536,
+              "lon": 29.2123782635
+            }
+          ],
+          "DataJSON": [
+            "{ \"cat\": \"2\", \"val\": 1, \"unit\": \"cm\" }"
+          ],
+          "Display fi": [
+            "Pysyvä jääpeite alkoi"
+          ],
+          "Display sv": [
+            "Tiden med istäcke börjar"
+          ],
+          "Display en": [
+            "Beginning of ice cover period"
+          ],
+          "Ylläpito": [
+            "Tavallisen käyttäjän ylläpitämä"
+          ]
+        },
+        "fulltext": "Torankijärvi (74.031.1.023)/Haapanantien ranta# 5eb317419e977baaed5b2e09ce573e8a",
+        "fullurl": "https://www.jarviwiki.fi/wiki/Torankij%C3%A4rvi_(74.031.1.023)/Haapanantien_ranta#_5eb317419e977baaed5b2e09ce573e8a",
+        "namespace": 0,
+        "exists": "1",
+        "displaytitle": ""
+      }
+    },
+    "serializer": "SMW\\Serializers\\QueryResultSerializer",
+    "version": 2,
+    "meta": {
+      "hash": "e352a919e30c269480a142580710c969",
+      "count": 1,
+      "offset": 0,
+      "source": "",
+      "time": "0.003945"
+    }
+  }
+}

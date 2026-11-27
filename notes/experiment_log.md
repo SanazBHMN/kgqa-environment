@@ -120,3 +120,25 @@ LIMIT 50
 ### Day 3 status
 
 The Wikidata client is ready for Bionic integration
+
+## 2026-11-27 - Järvi-meriwiki ask API retrieval test
+
+Purpose:
+
+Check whether a standalone Python script can reproduce the browser's action=ask request for site 169565.
+
+Script: tools/test_jarviwiki.py
+Method: POST to https://jarviwiki.fi/w/api.php (action=ask, format=json)
+
+Result:
+Request succeeded. count = 1. Record: ObsCode "ice", SiteID 169565,
+date 2026-11-13 9:00, Display_en "Beginning of ice cover period".
+Matches the browser response captured on 2026-11-23.
+
+Not established:
+
+- Historical coverage (query filters by date)
+- Meaning of DataJSON {"cat": "2", "val": 1, "unit": "cm"}
+- Whether the maintainer's observations are reliable.
+
+Evidence: notes/evidence/jarviwiki_ask_response_2026_11_27.json
